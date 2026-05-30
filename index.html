@@ -302,31 +302,31 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 
 
 /* ── WOTC MODAL ── */
-.wotc-modal { position: fixed; inset: 0; z-index: 300; display: none; align-items: center; justify-content: center; padding: 1rem; }
-.wotc-modal.open { display: flex; }
-.wotc-backdrop { position: absolute; inset: 0; background: rgba(21,35,52,0.72); backdrop-filter: blur(4px); }
-.wotc-dialog { position: relative; width: min(920px, 100%); max-height: min(86vh, 860px); overflow: auto; background: #FBF9F6; border-radius: 22px; box-shadow: 0 28px 90px rgba(0,0,0,0.34); border: 1px solid rgba(255,255,255,0.28); }
-.wotc-close { position: sticky; top: 0.8rem; margin-left: auto; margin-right: 0.8rem; margin-top: 0.8rem; width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(21,35,52,0.12); background: white; color: var(--ink); font-size: 22px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: var(--shadow-sm); }
-.wotc-content { padding: 0 1.25rem 1.5rem; }
-.wotc-head { padding: 0 0.5rem 1.25rem; max-width: 760px; }
-.wotc-head h2 { font-family: var(--font-d); font-size: clamp(2rem,4vw,3rem); line-height: 1; font-weight: 400; color: var(--ink); margin-bottom: 0.75rem; }
-.wotc-head p { color: #4A6070; font-size: 15px; line-height: 1.7; font-weight: 300; margin-bottom: 0.75rem; }
-.wotc-simple { display: inline-flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; color: var(--teal); font-weight: 600; background: #E8F5F4; border: 1px solid rgba(27,122,110,0.14); border-radius: 999px; padding: 0.65rem 0.85rem; }
-.wotc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.8rem; }
-.wotc-amount { background: white; border: 1px solid rgba(21,35,52,0.09); border-radius: 16px; padding: 1rem; box-shadow: 0 10px 28px rgba(21,35,52,0.06); }
-.wotc-money { font-family: var(--font-d); color: var(--teal); font-size: 1.55rem; line-height: 1; margin-bottom: 0.45rem; }
-.wotc-amount h3 { color: var(--ink); font-size: 15px; line-height: 1.25; margin-bottom: 0.35rem; }
-.wotc-amount p, .wotc-amount li { color: #4A6070; font-size: 13px; line-height: 1.48; font-weight: 300; }
-.wotc-amount ul { list-style: none; display: grid; gap: 0.28rem; }
+.wotc-modal, .zayzoon-modal { position: fixed; inset: 0; z-index: 300; display: none; align-items: center; justify-content: center; padding: 1rem; }
+.wotc-modal.open, .zayzoon-modal.open { display: flex; }
+.wotc-backdrop, .zayzoon-backdrop { position: absolute; inset: 0; background: rgba(21,35,52,0.72); backdrop-filter: blur(4px); }
+.wotc-dialog, .zayzoon-dialog { position: relative; width: min(920px, 100%); max-height: min(86vh, 860px); overflow: auto; background: #FBF9F6; border-radius: 22px; box-shadow: 0 28px 90px rgba(0,0,0,0.34); border: 1px solid rgba(255,255,255,0.28); }
+.wotc-close, .zayzoon-close { position: sticky; top: 0.8rem; margin-left: auto; margin-right: 0.8rem; margin-top: 0.8rem; width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(21,35,52,0.12); background: white; color: var(--ink); font-size: 22px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: var(--shadow-sm); }
+.wotc-content, .zayzoon-content { padding: 0 1.25rem 1.5rem; }
+.wotc-head, .zayzoon-head { padding: 0 0.5rem 1.25rem; max-width: 760px; }
+.wotc-head h2, .zayzoon-head h2 { font-family: var(--font-d); font-size: clamp(2rem,4vw,3rem); line-height: 1; font-weight: 400; color: var(--ink); margin-bottom: 0.75rem; }
+.wotc-head p, .zayzoon-head p { color: #4A6070; font-size: 15px; line-height: 1.7; font-weight: 300; margin-bottom: 0.75rem; }
+.wotc-simple, .zayzoon-simple { display: inline-flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; color: var(--teal); font-weight: 600; background: #E8F5F4; border: 1px solid rgba(27,122,110,0.14); border-radius: 999px; padding: 0.65rem 0.85rem; }
+.wotc-grid, .zayzoon-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.8rem; }
+.wotc-amount, .zayzoon-item { background: white; border: 1px solid rgba(21,35,52,0.09); border-radius: 16px; padding: 1rem; box-shadow: 0 10px 28px rgba(21,35,52,0.06); }
+.wotc-money, .zayzoon-money { font-family: var(--font-d); color: var(--teal); font-size: 1.55rem; line-height: 1; margin-bottom: 0.45rem; }
+.wotc-amount h3, .zayzoon-item h3 { color: var(--ink); font-size: 15px; line-height: 1.25; margin-bottom: 0.35rem; }
+.wotc-amount p, .wotc-amount li, .zayzoon-item p, .zayzoon-item li { color: #4A6070; font-size: 13px; line-height: 1.48; font-weight: 300; }
+.wotc-amount ul, .zayzoon-item ul { list-style: none; display: grid; gap: 0.28rem; }
 .wotc-wide { grid-column: span 2; }
-.wotc-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.9rem; }
-.wotc-callout { background: var(--slate); color: white; border-radius: 16px; padding: 1rem; }
-.wotc-callout h3 { font-family: var(--font-d); font-size: 1.45rem; line-height: 1.1; font-weight: 400; margin-bottom: 0.5rem; }
-.wotc-callout p, .wotc-callout li { color: rgba(255,255,255,0.72); font-size: 13px; line-height: 1.55; font-weight: 300; }
-.wotc-callout ul { list-style: none; display: grid; gap: 0.28rem; margin-top: 0.5rem; }
-.wotc-fee { background: #E8F5F4; border: 1px solid rgba(27,122,110,0.14); color: #315563; border-radius: 16px; padding: 1rem; font-size: 14px; line-height: 1.6; }
-.wotc-fee strong { color: var(--ink); }
-@media (max-width: 780px) { .wotc-grid, .wotc-foot { grid-template-columns: 1fr; } .wotc-wide { grid-column: auto; } .wotc-dialog { max-height: 90vh; } }
+.wotc-foot, .zayzoon-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.9rem; }
+.wotc-callout, .zayzoon-callout { background: var(--slate); color: white; border-radius: 16px; padding: 1rem; }
+.wotc-callout h3, .zayzoon-callout h3 { font-family: var(--font-d); font-size: 1.45rem; line-height: 1.1; font-weight: 400; margin-bottom: 0.5rem; }
+.wotc-callout p, .wotc-callout li, .zayzoon-callout p, .zayzoon-callout li { color: rgba(255,255,255,0.72); font-size: 13px; line-height: 1.55; font-weight: 300; }
+.wotc-callout ul, .zayzoon-callout ul { list-style: none; display: grid; gap: 0.28rem; margin-top: 0.5rem; }
+.wotc-fee, .zayzoon-fee { background: #E8F5F4; border: 1px solid rgba(27,122,110,0.14); color: #315563; border-radius: 16px; padding: 1rem; font-size: 14px; line-height: 1.6; }
+.wotc-fee strong, .zayzoon-fee strong { color: var(--ink); }
+@media (max-width: 780px) { .wotc-grid, .wotc-foot, .zayzoon-grid, .zayzoon-foot { grid-template-columns: 1fr; } .wotc-wide { grid-column: auto; } .wotc-dialog, .zayzoon-dialog { max-height: 90vh; } }
 
 /* ── FOOTER ── */
 footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
@@ -432,7 +432,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
 <!-- ── HERO BENEFITS ── -->
 <section class="hero-benefits" aria-label="Auris benefit questions">
   <div class="hero-benefits-inner">
-    <a class="hero-benefit" href="#zayzoon-feature">
+    <a class="hero-benefit js-zayzoon-open" href="#zayzoon-modal">
       <span class="hero-benefit-kicker">ZayZoon</span>
       <span class="hero-benefit-title">No more payroll advances</span>
       <span class="hero-benefit-copy">Offer earned wage access without making it another payroll headache.</span>
@@ -586,6 +586,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <div class="feature-icon" aria-hidden="true">Z</div>
         <h3>ZayZoon</h3>
         <p><strong>Employees may need access to earned wages before payday.</strong> ZayZoon can add earned wage access as an employee financial wellness benefit.</p>
+        <a class="js-zayzoon-open" href="#zayzoon-modal" style="display:inline-flex;margin-top:0.75rem;color:var(--teal);font-weight:600;font-size:13px;text-decoration:none;">View quick ZayZoon explainer</a>
       </article>
       <article class="feature-card scroll-in" id="employee-access-feature">
         <div class="feature-icon" aria-hidden="true">1</div>
@@ -662,6 +663,48 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   </form>
 </section>
 
+
+
+<div class="zayzoon-modal" id="zayzoon-modal" role="dialog" aria-modal="true" aria-labelledby="zayzoon-title" aria-hidden="true">
+  <div class="zayzoon-backdrop" data-zayzoon-close></div>
+  <div class="zayzoon-dialog" role="document">
+    <button class="zayzoon-close" type="button" aria-label="Close ZayZoon popup" data-zayzoon-close>X</button>
+    <div class="zayzoon-content">
+      <div class="zayzoon-head">
+        <p class="s-eye">ZayZoon quick scan</p>
+        <h2 id="zayzoon-title">What is ZayZoon?</h2>
+        <p>ZayZoon is an earned wage access benefit. It can let employees access part of the wages they have already earned before payday, without the employer fronting payroll advances.</p>
+        <div class="zayzoon-simple">No cost to employers. Low cost option for employees, commonly $5 when they choose an instant payout.</div>
+      </div>
+      <div class="zayzoon-grid" aria-label="ZayZoon overview">
+        <div class="zayzoon-item">
+          <div class="zayzoon-money">No more advances</div>
+          <h3>Stop fronting money manually</h3>
+          <p>Instead of owners or managers handling one off payroll advances, employees can use ZayZoon to access earned wages through a structured benefit.</p>
+        </div>
+        <div class="zayzoon-item">
+          <div class="zayzoon-money">No employer cost</div>
+          <h3>Simple to offer</h3>
+          <p>ZayZoon can be offered at no cost to the employer, which makes it easier to add as an employee financial wellness benefit.</p>
+        </div>
+        <div class="zayzoon-item">
+          <div class="zayzoon-money">Low employee cost</div>
+          <h3>Clear employee choice</h3>
+          <p>Employees choose whether to use it. Instant payouts are commonly a low flat cost, often $5, instead of a payday loan style experience.</p>
+        </div>
+      </div>
+      <div class="zayzoon-foot">
+        <div class="zayzoon-callout">
+          <h3>Why employers care</h3>
+          <p>Financial stress shows up at work. Earned wage access can give employees a safer option when timing is the problem, while helping the employer avoid manual advance requests.</p>
+        </div>
+        <div class="zayzoon-fee">
+          <strong>How Auris makes this easier.</strong> ZayZoon can fit into the broader Auris payroll conversation, so earned wage access is not another disconnected vendor for the employer to manage alone.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="wotc-modal" id="wotc-modal" role="dialog" aria-modal="true" aria-labelledby="wotc-title" aria-hidden="true">
   <div class="wotc-backdrop" data-wotc-close></div>
@@ -822,6 +865,31 @@ leadForm?.addEventListener("submit", async event => {
   }
 });
 
+
+
+const zayzoonModal = document.getElementById("zayzoon-modal");
+const zayzoonOpeners = document.querySelectorAll(".js-zayzoon-open");
+const zayzoonClosers = document.querySelectorAll("[data-zayzoon-close]");
+let zayzoonLastFocus = null;
+function openZayzoonModal(event) {
+  event?.preventDefault();
+  zayzoonLastFocus = document.activeElement;
+  zayzoonModal?.classList.add("open");
+  zayzoonModal?.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  zayzoonModal?.querySelector(".zayzoon-close")?.focus();
+}
+function closeZayzoonModal() {
+  zayzoonModal?.classList.remove("open");
+  zayzoonModal?.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  zayzoonLastFocus?.focus?.();
+}
+zayzoonOpeners.forEach(link => link.addEventListener("click", openZayzoonModal));
+zayzoonClosers.forEach(button => button.addEventListener("click", closeZayzoonModal));
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && zayzoonModal?.classList.contains("open")) closeZayzoonModal();
+});
 
 const wotcModal = document.getElementById("wotc-modal");
 const wotcOpeners = document.querySelectorAll(".js-wotc-open");
