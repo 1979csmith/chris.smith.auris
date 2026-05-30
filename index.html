@@ -416,7 +416,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <div class="proof-row">Under 60 sec average wait time</div>
         <div class="proof-row">Official Auris site: auris.io</div>
       </div>
-      <a href="#connect" class="hero-cta" data-track="hero_cta">Book a 20 minute conversation →</a>
+      <a href="mailto:chrissmith@auris.io?subject=20%20minute%20Auris%20conversation&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A" class="hero-cta" id="hero-email-link" data-track="hero_email_cta">Book a 20 minute conversation →</a>
       <div class="hero-mini-proof">“With Auris, I can always reach someone.” <span>Auris client</span></div>
       <a class="official-auris" href="https://www.auris.io/" target="_blank" rel="noopener">Official Auris site: <strong>auris.io</strong> ↗</a>
     </div>
@@ -726,7 +726,8 @@ document.querySelectorAll("[data-track]").forEach(el => {
 
 function refreshEmailLink() {
   const emailLink = document.getElementById("email-chris-link");
-  if (!emailLink) return;
+  const heroEmailLink = document.getElementById("hero-email-link");
+  if (!emailLink && !heroEmailLink) return;
   const source = JSON.parse(sessionStorage.getItem("aurisVisitSource") || "{}");
   const sourceLines = [
     "",
@@ -741,7 +742,9 @@ function refreshEmailLink() {
   ].join("\n");
   const subject = encodeURIComponent("20 minute Auris conversation");
   const body = encodeURIComponent(`Help Chris out:\n\nCompany name:\n\nHow many employees:\n\nBest times for Chris to contact:\n\nWhat would you like help with:\n${sourceLines}\n`);
-  emailLink.href = `mailto:chrissmith@auris.io?subject=${subject}&body=${body}`;
+  const mailtoHref = `mailto:chrissmith@auris.io?subject=${subject}&body=${body}`;
+  if (emailLink) emailLink.href = mailtoHref;
+  if (heroEmailLink) heroEmailLink.href = mailtoHref;
 }
 refreshEmailLink();
 
