@@ -155,6 +155,24 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .eco-row-text { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 300; line-height: 1.5; }
 .eco-row.hi .eco-row-text { color: var(--amber2); }
 .eco-divider { height: 1px; background: rgba(255,255,255,0.1); }
+.zay-insight { margin-top: 0.25rem; background: rgba(255,255,255,0.96); border: 1px solid rgba(200,237,233,0.75); border-radius: 16px; overflow: hidden; box-shadow: 0 16px 40px rgba(21,35,52,0.16); }
+.zay-prehead { padding: 1.05rem 1.1rem 0; font-family: var(--font-d); font-size: 1.15rem; line-height: 1.2; color: var(--ink); }
+.zay-toggle { width: 100%; min-height: 58px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.95rem 1.1rem 1.1rem; text-align: left; font-family: var(--font-b); }
+.zay-brand { display: flex; align-items: center; gap: 0.8rem; min-width: 0; }
+.zay-logo { width: 118px; max-width: 38vw; height: auto; object-fit: contain; flex-shrink: 0; }
+.zay-kicker { display: block; font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--teal); margin-bottom: 2px; }
+.zay-title { display: block; font-size: 14px; color: #4A6070; font-weight: 400; line-height: 1.35; }
+.zay-chev { width: 32px; height: 32px; border-radius: 50%; background: #E8F5F4; color: var(--teal); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .25s var(--ease), background .2s; }
+.zay-insight.open .zay-chev { transform: rotate(180deg); background: var(--teal3); }
+.zay-panel { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
+.zay-insight.open .zay-panel { max-height: 620px; }
+.zay-panel-inner { margin: 0 1.1rem 1.1rem; padding-top: 1rem; border-top: 1px solid rgba(21,35,52,0.09); display: grid; gap: 1rem; }
+.zay-info { padding: 0.95rem; background: #F7FBFA; border: 1px solid rgba(27,122,110,0.09); border-radius: 12px; }
+.zay-info h4 { font-size: 13px; color: var(--teal); font-weight: 700; margin-bottom: 0.45rem; }
+.zay-info p { font-size: 13.5px; line-height: 1.65; color: #4A6070; font-weight: 300; margin: 0; }
+.zay-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; padding-top: 0.1rem; }
+.zay-chip { font-size: 12px; color: var(--teal); background: #E8F5F4; border: 1px solid rgba(27,122,110,0.12); border-radius: 100px; padding: 5px 10px; }
+.zay-chip.amber { color: var(--amber); background: var(--amber3); border-color: rgba(217,118,15,0.13); }
 
 /* ── TESTIMONIALS ── */
 .testi-section { padding: 5rem 1.25rem; }
@@ -520,6 +538,36 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <div class="eco-row"><div class="eco-dot"></div><div class="eco-row-text"><strong style="color:rgba(255,255,255,0.85);font-weight:500;">Benefits</strong> — medical, dental, vision through your existing broker/carrier or Employee Navigator-supported workflows</div></div>
         <div class="eco-divider"></div>
         <div class="eco-row hi"><div class="eco-dot"></div><div class="eco-row-text"><strong>ZayZoon</strong> — earned wage access, an optional financial wellness add-on employees actually use</div></div>
+        <div class="zay-insight" id="zayzoon-insight">
+          <div class="zay-prehead">Stop fronting payroll advances — let ZayZoon handle early wage access.</div>
+          <button class="zay-toggle" type="button" aria-expanded="false" aria-controls="zayzoon-panel">
+            <span class="zay-brand">
+              <img class="zay-logo" src="https://www.zayzoon.com/hubfs/Website%20Assets/_ZayZoon%20Logos%202023/Digital%20Use%20(RGB)/_Cropped%20Version/_Cropped%20PNGs/300dpi/ZayZoon%20Logo%202023%20Cropped%20RGB_Horizontal%20Logo%20Full%20Color.png" alt="ZayZoon logo" loading="lazy">
+              <span>
+                <span class="zay-kicker">Quick insight</span>
+                <span class="zay-title">What employee earned wages means</span>
+              </span>
+            </span>
+            <span class="zay-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="zay-panel" id="zayzoon-panel">
+            <div class="zay-panel-inner">
+              <div class="zay-info">
+                <h4>What ZayZoon is</h4>
+                <p>ZayZoon is an employee financial wellness benefit that lets workers access part of their earned pay before payday. It funds the early payout and reconciles automatically through payroll, so employers are not manually fronting advances. For employers, it adds a useful benefit without rerouting paychecks or creating another payroll headache.</p>
+              </div>
+              <div class="zay-info">
+                <h4>What Earned Employee Wages means</h4>
+                <p>Earned Employee Wages are wages an employee has already worked for, but has not received yet because payday has not arrived. With earned wage access, employees can request a limited portion of those wages early when life happens. ZayZoon lists safeguards like one transaction per day, up to 50% of earned wages, and a $200 daily max.</p>
+              </div>
+              <div class="zay-chips" aria-label="ZayZoon highlights">
+                <span class="zay-chip">Before payday</span>
+                <span class="zay-chip">No payroll reroute</span>
+                <span class="zay-chip amber">Built-in limits</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -624,6 +672,15 @@ document.querySelectorAll(".feat").forEach(card => {
   card.addEventListener("click", toggle);
   card.addEventListener("keydown", e => {
     if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+  });
+});
+
+/* ZayZoon quick insight */
+document.querySelectorAll(".zay-insight").forEach(card => {
+  const btn = card.querySelector(".zay-toggle");
+  btn.addEventListener("click", () => {
+    const open = card.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
   });
 });
 
