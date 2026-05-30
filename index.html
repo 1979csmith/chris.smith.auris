@@ -247,6 +247,16 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .consult-section { padding: 5rem 1.25rem; border-top: 1px solid var(--rule); }
 .problem-section { background: var(--warm); }
 .why-section { background: linear-gradient(180deg,var(--warm2),#F2ECE3); }
+.partner-section { display: none; background: linear-gradient(180deg,var(--slate),var(--slate2)); color: white; }
+.partner-section:target { display: block; }
+.partner-section:target .scroll-in { opacity: 1; transform: none; }
+.partner-section .s-eye { color: var(--teal3); }
+.partner-section .s-h2 { color: white; }
+.partner-section .consult-lead { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.88); border-left-color: var(--amber2); box-shadow: none; }
+.partner-section .consult-copy { color: rgba(255,255,255,0.72); }
+.partner-section .why-card { background: rgba(255,255,255,0.96); }
+.partner-photo-wrap { margin-top: 1.25rem; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); box-shadow: var(--shadow-md); max-height: 280px; }
+.partner-photo-img { width: 100%; height: 280px; object-fit: cover; object-position: center top; display: block; }
 .consult-inner { max-width: 1060px; margin: 0 auto; }
 .two-col { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
 .consult-lead { font-size: 1.05rem; color: var(--ink); line-height: 1.75; font-weight: 400; margin-bottom: 1rem; padding: 1rem 1.1rem; border-left: 4px solid var(--teal2); background: rgba(255,255,255,0.76); border-radius: 0 14px 14px 0; box-shadow: var(--shadow-sm); }
@@ -389,7 +399,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="brand">Your <strong>Auris Specialist</strong></div>
     <div class="nav-links">
       <a href="#value">Why Auris</a>
-      <a href="#partners">Partners</a>
+      <a href="#partners" data-track="nav_partners">Partners</a>
       <a href="#connect">Contact</a>
       <a href="#connect" class="nav-cta" data-track="nav_get_in_touch">Get in touch</a>
     </div>
@@ -399,7 +409,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   </div>
   <nav class="m-nav" id="mnav" aria-label="Mobile navigation">
     <a href="#value">Why Auris</a>
-    <a href="#partners">Partners</a>
+    <a href="#partners" data-track="mobile_nav_partners">Partners</a>
     <a href="#connect">Contact</a>
     <a href="#connect" class="m-nav-cta" data-track="mobile_get_in_touch">Get in touch →</a>
   </nav>
@@ -492,13 +502,14 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
 </section>
 
 <!-- ── PARTNERS ── -->
-<section class="consult-section why-section" id="partners" aria-label="Partner referral opportunity">
+<section class="consult-section partner-section" id="partners" aria-label="Partner referral opportunity">
   <div class="consult-inner two-col">
     <div class="scroll-in">
       <p class="s-eye">Partner referrals</p>
       <h2 class="s-h2">Refer payroll opportunities without taking on the service burden.</h2>
       <p class="consult-lead">If you serve business owners, Auris can be a strong referral path when payroll, HR, benefits, or 401k questions come up.</p>
       <p class="consult-copy">Chris keeps and manages the account after the referral, so your client has one Auris sales representative for the life of the account. The goal is simple. Protect your relationship, give the client responsive service, and create lifetime residual opportunity for qualified partner referrals.</p>
+      <div class="partner-photo-wrap" aria-hidden="true"><img class="partner-photo-img" id="partner-photo-img" alt=""></div>
     </div>
     <div class="why-card scroll-in" aria-label="Why partners refer to Auris">
       <div class="why-card-kicker">Why partners refer</div>
@@ -740,6 +751,10 @@ function trackEvent(name, detail = {}) {
 }
 
 trackEvent("page_view_custom", { path: window.location.pathname });
+const partnerPhoto = document.getElementById("partner-photo-img");
+const heroPhoto = document.querySelector(".hero-photo");
+if (partnerPhoto && heroPhoto) partnerPhoto.src = heroPhoto.src;
+
 document.querySelectorAll("[data-track]").forEach(el => {
   el.addEventListener("click", () => trackEvent(el.dataset.track, { text: el.textContent.trim().slice(0, 120) }));
 });
