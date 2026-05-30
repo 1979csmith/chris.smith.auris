@@ -300,6 +300,34 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .fit-status a { color: var(--teal3); font-weight: 600; }
 @media (max-width: 720px) { .fit-checks, .fit-contact-grid { grid-template-columns: 1fr; } }
 
+
+/* ── WOTC MODAL ── */
+.wotc-modal { position: fixed; inset: 0; z-index: 300; display: none; align-items: center; justify-content: center; padding: 1rem; }
+.wotc-modal.open { display: flex; }
+.wotc-backdrop { position: absolute; inset: 0; background: rgba(21,35,52,0.72); backdrop-filter: blur(4px); }
+.wotc-dialog { position: relative; width: min(920px, 100%); max-height: min(86vh, 860px); overflow: auto; background: #FBF9F6; border-radius: 22px; box-shadow: 0 28px 90px rgba(0,0,0,0.34); border: 1px solid rgba(255,255,255,0.28); }
+.wotc-close { position: sticky; top: 0.8rem; margin-left: auto; margin-right: 0.8rem; margin-top: 0.8rem; width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(21,35,52,0.12); background: white; color: var(--ink); font-size: 22px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: var(--shadow-sm); }
+.wotc-content { padding: 0 1.25rem 1.5rem; }
+.wotc-head { padding: 0 0.5rem 1.25rem; max-width: 760px; }
+.wotc-head h2 { font-family: var(--font-d); font-size: clamp(2rem,4vw,3rem); line-height: 1; font-weight: 400; color: var(--ink); margin-bottom: 0.75rem; }
+.wotc-head p { color: #4A6070; font-size: 15px; line-height: 1.7; font-weight: 300; margin-bottom: 0.75rem; }
+.wotc-simple { display: inline-flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; color: var(--teal); font-weight: 600; background: #E8F5F4; border: 1px solid rgba(27,122,110,0.14); border-radius: 999px; padding: 0.65rem 0.85rem; }
+.wotc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.8rem; }
+.wotc-amount { background: white; border: 1px solid rgba(21,35,52,0.09); border-radius: 16px; padding: 1rem; box-shadow: 0 10px 28px rgba(21,35,52,0.06); }
+.wotc-money { font-family: var(--font-d); color: var(--teal); font-size: 1.55rem; line-height: 1; margin-bottom: 0.45rem; }
+.wotc-amount h3 { color: var(--ink); font-size: 15px; line-height: 1.25; margin-bottom: 0.35rem; }
+.wotc-amount p, .wotc-amount li { color: #4A6070; font-size: 13px; line-height: 1.48; font-weight: 300; }
+.wotc-amount ul { list-style: none; display: grid; gap: 0.28rem; }
+.wotc-wide { grid-column: span 2; }
+.wotc-foot { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 0.9rem; }
+.wotc-callout { background: var(--slate); color: white; border-radius: 16px; padding: 1rem; }
+.wotc-callout h3 { font-family: var(--font-d); font-size: 1.45rem; line-height: 1.1; font-weight: 400; margin-bottom: 0.5rem; }
+.wotc-callout p, .wotc-callout li { color: rgba(255,255,255,0.72); font-size: 13px; line-height: 1.55; font-weight: 300; }
+.wotc-callout ul { list-style: none; display: grid; gap: 0.28rem; margin-top: 0.5rem; }
+.wotc-fee { background: #E8F5F4; border: 1px solid rgba(27,122,110,0.14); color: #315563; border-radius: 16px; padding: 1rem; font-size: 14px; line-height: 1.6; }
+.wotc-fee strong { color: var(--ink); }
+@media (max-width: 780px) { .wotc-grid, .wotc-foot { grid-template-columns: 1fr; } .wotc-wide { grid-column: auto; } .wotc-dialog { max-height: 90vh; } }
+
 /* ── FOOTER ── */
 footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
 .foot-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
@@ -409,7 +437,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
       <span class="hero-benefit-title">No more payroll advances</span>
       <span class="hero-benefit-copy">Offer earned wage access without making it another payroll headache.</span>
     </a>
-    <a class="hero-benefit" href="#wotc-feature">
+    <a class="hero-benefit js-wotc-open" href="#wotc-modal">
       <span class="hero-benefit-kicker">WOTC</span>
       <span class="hero-benefit-title">Does your current system screen for tax credits?</span>
       <span class="hero-benefit-copy">Auris can help screen new hires for potential Work Opportunity Tax Credit eligibility.</span>
@@ -542,6 +570,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <div class="feature-icon" aria-hidden="true">TC</div>
         <h3>WOTC tax credits</h3>
         <p><strong>Does your payroll scan for hiring tax credits?</strong> Auris can help screen new hires for potential Work Opportunity Tax Credit eligibility so opportunities are not missed.</p>
+        <a class="js-wotc-open" href="#wotc-modal" style="display:inline-flex;margin-top:0.75rem;color:var(--teal);font-weight:600;font-size:13px;text-decoration:none;">View quick WOTC list</a>
       </article>
       <article class="feature-card scroll-in">
         <div class="feature-icon" aria-hidden="true">401</div>
@@ -633,6 +662,78 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   </form>
 </section>
 
+
+<div class="wotc-modal" id="wotc-modal" role="dialog" aria-modal="true" aria-labelledby="wotc-title" aria-hidden="true">
+  <div class="wotc-backdrop" data-wotc-close></div>
+  <div class="wotc-dialog" role="document">
+    <button class="wotc-close" type="button" aria-label="Close WOTC popup" data-wotc-close>X</button>
+    <div class="wotc-content">
+      <div class="wotc-head">
+        <p class="s-eye">WOTC quick scan</p>
+        <h2 id="wotc-title">What is WOTC?</h2>
+        <p>The Work Opportunity Tax Credit is a federal tax credit that rewards employers for hiring people from certain groups that face barriers to employment.</p>
+        <div class="wotc-simple">Hire an eligible employee, receive a potential federal tax credit.</div>
+      </div>
+      <div class="wotc-grid" aria-label="WOTC tax credit categories">
+        <div class="wotc-amount">
+          <div class="wotc-money">Up to $9,600</div>
+          <h3>Disabled veteran</h3>
+          <p>Veteran with a service connected disability and unemployed for at least 6 months before being hired.</p>
+        </div>
+        <div class="wotc-amount">
+          <div class="wotc-money">Up to $9,000</div>
+          <h3>Long term family assistance recipient</h3>
+          <p>Individual who has received long term TANF benefits.</p>
+        </div>
+        <div class="wotc-amount">
+          <div class="wotc-money">Up to $5,600</div>
+          <h3>Veteran</h3>
+          <p>Veteran unemployed for at least 6 months before being hired.</p>
+        </div>
+        <div class="wotc-amount">
+          <div class="wotc-money">Up to $4,800</div>
+          <h3>Disabled veteran</h3>
+          <p>Veteran with a service connected disability hired within 1 year of discharge.</p>
+        </div>
+        <div class="wotc-amount wotc-wide">
+          <div class="wotc-money">Up to $2,400</div>
+          <h3>Common qualifying categories</h3>
+          <ul>
+            <li>Veteran receiving SNAP</li>
+            <li>Veteran unemployed at least 4 weeks but less than 6 months</li>
+            <li>SNAP recipient</li>
+            <li>SSI recipient</li>
+            <li>TANF recipient</li>
+            <li>Qualified ex felon</li>
+            <li>Vocational rehabilitation referral</li>
+            <li>Designated community resident</li>
+            <li>Long term unemployment recipient, 27 or more consecutive weeks</li>
+          </ul>
+        </div>
+        <div class="wotc-amount">
+          <div class="wotc-money">Up to $1,200</div>
+          <h3>Summer youth employee</h3>
+          <p>Youth employee working in a designated Empowerment Zone during the summer.</p>
+        </div>
+      </div>
+      <div class="wotc-foot">
+        <div class="wotc-callout">
+          <h3>Why employers care</h3>
+          <p>Multiple eligible employees can generate multiple credits.</p>
+          <ul>
+            <li>2 SNAP recipients can mean up to $4,800</li>
+            <li>1 veteran unemployed 6 months or more can mean up to $5,600</li>
+            <li>Potential tax credits in this example: $10,400</li>
+          </ul>
+        </div>
+        <div class="wotc-fee">
+          <strong>Most payroll systems do not screen for this.</strong> Some that do may charge a percentage. Auris can screen automatically and uses a flat $299 fee after screening instead of a percentage model.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="foot-inner">
@@ -718,6 +819,31 @@ leadForm?.addEventListener("submit", async event => {
     console.error("Auris lead email failed", error, data);
     fitStatus.innerHTML = `Your info is saved as a backup in this browser. Email delivery may need a retry. <a href="${buildMailto(data)}">Send it by email instead</a>.`;
   }
+});
+
+
+const wotcModal = document.getElementById("wotc-modal");
+const wotcOpeners = document.querySelectorAll(".js-wotc-open");
+const wotcClosers = document.querySelectorAll("[data-wotc-close]");
+let wotcLastFocus = null;
+function openWotcModal(event) {
+  event?.preventDefault();
+  wotcLastFocus = document.activeElement;
+  wotcModal?.classList.add("open");
+  wotcModal?.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  wotcModal?.querySelector(".wotc-close")?.focus();
+}
+function closeWotcModal() {
+  wotcModal?.classList.remove("open");
+  wotcModal?.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  wotcLastFocus?.focus?.();
+}
+wotcOpeners.forEach(link => link.addEventListener("click", openWotcModal));
+wotcClosers.forEach(button => button.addEventListener("click", closeWotcModal));
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && wotcModal?.classList.contains("open")) closeWotcModal();
 });
 
 const observer = new IntersectionObserver(entries => {
