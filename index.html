@@ -7,6 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+/* Add a GA4 measurement ID here when ready, for example G-XXXXXXXXXX. */
+window.AURIS_ANALYTICS_ID = "";
+</script>
 <style>
 /* ── RESET & TOKENS ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -386,7 +390,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="nav-links">
       <a href="#value">Why Auris</a>
       <a href="#connect">Contact</a>
-      <a href="#connect" class="nav-cta">Get in touch</a>
+      <a href="#connect" class="nav-cta" data-track="nav_get_in_touch">Get in touch</a>
     </div>
     <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -395,7 +399,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   <nav class="m-nav" id="mnav" aria-label="Mobile navigation">
     <a href="#value">Why Auris</a>
     <a href="#connect">Contact</a>
-    <a href="#connect" class="m-nav-cta">Get in touch →</a>
+    <a href="#connect" class="m-nav-cta" data-track="mobile_get_in_touch">Get in touch →</a>
   </nav>
 </header>
 
@@ -412,7 +416,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <div class="proof-row">Under 60 sec average wait time</div>
         <div class="proof-row">Official Auris site: auris.io</div>
       </div>
-      <a href="#connect" class="hero-cta">See if Auris is a fit →</a>
+      <a href="#connect" class="hero-cta" data-track="hero_cta">See if Auris is a fit →</a>
       <div class="hero-mini-proof">“With Auris, I can always reach someone.” <span>Auris client</span></div>
       <a class="official-auris" href="https://www.auris.io/" target="_blank" rel="noopener">Official Auris site: <strong>auris.io</strong> ↗</a>
     </div>
@@ -429,19 +433,19 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
 <!-- ── HERO BENEFITS ── -->
 <section class="hero-benefits" aria-label="Auris benefit questions">
   <div class="hero-benefits-inner">
-    <a class="hero-benefit js-zayzoon-open" href="#zayzoon-modal">
+    <a class="hero-benefit js-zayzoon-open" href="#zayzoon-modal" data-track="open_zayzoon_popup">
       <span class="hero-benefit-kicker">ZayZoon</span>
       <span class="hero-benefit-title">No more payroll advances</span>
       <span class="hero-benefit-copy">Offer earned wage access without making it another payroll headache.</span>
       <span class="hero-benefit-action">Click to learn more</span>
     </a>
-    <a class="hero-benefit js-wotc-open" href="#wotc-modal">
+    <a class="hero-benefit js-wotc-open" href="#wotc-modal" data-track="open_wotc_popup">
       <span class="hero-benefit-kicker">WOTC</span>
       <span class="hero-benefit-title">Does your payroll provider scan for WOTC?</span>
       <span class="hero-benefit-copy">Auris does. It is a standard feature.</span>
       <span class="hero-benefit-action">Click to learn more</span>
     </a>
-    <a class="hero-benefit js-access-open" href="#access-modal">
+    <a class="hero-benefit js-access-open" href="#access-modal" data-track="open_employee_access_popup">
       <span class="hero-benefit-kicker">Employee access</span>
       <span class="hero-benefit-title">One place for payroll, benefits, and 401k</span>
       <span class="hero-benefit-copy">Use preferred providers or trusted partners while reducing multiple sites.</span>
@@ -491,8 +495,8 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   <p>If someone referred you here, the fastest next step is simple. Call Chris directly or send a prefilled email with the details he needs to follow up prepared.</p>
   <div class="contact-panel">
     <div class="contact-actions" aria-label="Contact Chris">
-      <a class="contact-action contact-call" href="tel:+18018858755"><strong>Call Chris</strong><span>801 885 8755</span></a>
-      <a class="contact-action contact-email" href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A"><strong>Email Chris</strong><span>Prefilled prompt</span></a>
+      <a class="contact-action contact-call" href="tel:+18018858755" data-track="click_call"><strong>Call Chris</strong><span>801 885 8755</span></a>
+      <a class="contact-action contact-email" id="email-chris-link" data-track="click_email" href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A"><strong>Email Chris</strong><span>Prefilled prompt</span></a>
     </div>
     <p class="contact-helper">Email opens with prompts for company name, employee count, best contact times, and what you want help with.</p>
   </div>
@@ -662,8 +666,8 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="foot-brand">Your <strong>Auris Specialist</strong>, serving clients for the life of the account</div>
     <div class="foot-links">
       <a href="https://auris.io" target="_blank" rel="noopener">auris.io ↗</a>
-      <a href="tel:+18018858755">Call</a>
-      <a href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A">Email</a>
+      <a href="tel:+18018858755" data-track="footer_call">Call</a>
+      <a data-track="footer_email" href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A">Email</a>
     </div>
   </div>
   <div style="max-width:1060px;margin:0 auto;padding:0 1.25rem;">
@@ -682,6 +686,64 @@ mnav?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
   mnav.classList.remove("open");
   ham?.setAttribute("aria-expanded", "false");
 }));
+
+
+const analyticsId = window.AURIS_ANALYTICS_ID || "";
+if (analyticsId) {
+  const gaScript = document.createElement("script");
+  gaScript.async = true;
+  gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
+  document.head.appendChild(gaScript);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", analyticsId);
+}
+
+const sourceParams = new URLSearchParams(window.location.search);
+const sourceKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "ref", "lead", "company"];
+const visitSource = {
+  landing_page: window.location.href,
+  referrer: document.referrer || "direct",
+  first_seen: new Date().toISOString()
+};
+sourceKeys.forEach(key => {
+  const value = sourceParams.get(key);
+  if (value) visitSource[key] = value;
+});
+sessionStorage.setItem("aurisVisitSource", JSON.stringify(visitSource));
+
+function trackEvent(name, detail = {}) {
+  const payload = { ...visitSource, ...detail };
+  if (window.gtag) gtag("event", name, payload);
+  console.info("Auris tracking event", name, payload);
+}
+
+trackEvent("page_view_custom", { path: window.location.pathname });
+document.querySelectorAll("[data-track]").forEach(el => {
+  el.addEventListener("click", () => trackEvent(el.dataset.track, { text: el.textContent.trim().slice(0, 120) }));
+});
+
+function refreshEmailLink() {
+  const emailLink = document.getElementById("email-chris-link");
+  if (!emailLink) return;
+  const source = JSON.parse(sessionStorage.getItem("aurisVisitSource") || "{}");
+  const sourceLines = [
+    "",
+    "Page/source details:",
+    `Landing page: ${source.landing_page || window.location.href}`,
+    `Referrer: ${source.referrer || "direct"}`,
+    `UTM source: ${source.utm_source || ""}`,
+    `UTM medium: ${source.utm_medium || ""}`,
+    `UTM campaign: ${source.utm_campaign || ""}`,
+    `Lead tag: ${source.lead || ""}`,
+    `Company tag: ${source.company || ""}`
+  ].join("\n");
+  const subject = encodeURIComponent("See if Auris is a fit");
+  const body = encodeURIComponent(`Help Chris out:\n\nCompany name:\n\nHow many employees:\n\nBest times for Chris to contact:\n\nWhat would you like help with:\n${sourceLines}\n`);
+  emailLink.href = `mailto:chrissmith@auris.io?subject=${subject}&body=${body}`;
+}
+refreshEmailLink();
 
 const accessModal = document.getElementById("access-modal");
 const accessOpeners = document.querySelectorAll(".js-access-open");
