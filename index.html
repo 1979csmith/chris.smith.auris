@@ -241,6 +241,24 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .compact-proof { grid-template-columns: repeat(2,1fr); }
 @media (max-width: 860px) { .two-col { grid-template-columns: 1fr; gap: 2rem; } }
 
+
+.feature-grid-section { background: #FBF9F6; border-top: 1px solid var(--rule); padding: 5rem 1.25rem; }
+.feature-grid-inner { max-width: 1060px; margin: 0 auto; }
+.feature-intro { max-width: 690px; }
+.feature-intro p { color: #4A6070; font-size: 15px; line-height: 1.8; font-weight: 300; margin-bottom: 1rem; }
+.feature-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2rem; }
+.feature-card { background: var(--white); border: 1px solid rgba(21,35,52,0.09); border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 30px rgba(21,35,52,0.06); position: relative; overflow: hidden; }
+.feature-card::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg,var(--teal2),var(--amber2)); opacity: 0.85; }
+.feature-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; background: #E8F5F4; color: var(--teal); font-weight: 600; margin-bottom: 0.85rem; }
+.feature-card:nth-child(2) .feature-icon, .feature-card:nth-child(5) .feature-icon { background: var(--amber3); color: var(--amber); }
+.feature-card:nth-child(3) .feature-icon { background: #EBF2FB; color: #2A6094; }
+.feature-card h3 { font-family: var(--font-d); font-size: 1.25rem; font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 0.45rem; }
+.feature-card p { color: #4A6070; font-size: 14px; line-height: 1.65; font-weight: 300; }
+.feature-card strong { color: var(--ink); font-weight: 600; }
+.feature-note { margin-top: 1.3rem; padding: 1rem 1.1rem; border-left: 4px solid var(--teal2); background: #E8F5F4; border-radius: 0 14px 14px 0; color: #3D5565; font-size: 14px; line-height: 1.65; }
+@media (max-width: 900px) { .feature-cards { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 620px) { .feature-cards { grid-template-columns: 1fr; } }
+
 /* ── CTA BAND ── */
 .cta-band { background: var(--slate); padding: 5rem 1.25rem; text-align: center; position: relative; overflow: hidden; }
 .cta-band::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg,var(--teal2),var(--amber2)); }
@@ -327,6 +345,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="nav-links">
       <a href="#problem">Problem</a>
       <a href="#about">Why me</a>
+      <a href="#features">Features</a>
       <a href="#why-auris">Why Auris</a>
       <a href="#lead-form" class="nav-cta js-fit-trigger">Get in touch</a>
     </div>
@@ -337,6 +356,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   <nav class="m-nav" id="mnav" aria-label="Mobile navigation">
     <a href="#problem">Problem</a>
     <a href="#about">Why me</a>
+    <a href="#features">Features</a>
     <a href="#why-auris">Why Auris</a>
     <a href="#lead-form" class="m-nav-cta js-fit-trigger">Get in touch →</a>
   </nav>
@@ -467,6 +487,50 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
       <h3>Less scattered admin. More clarity.</h3>
       <p>That is the main thing I help business owners evaluate.</p>
     </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="feature-grid-section" id="features" aria-label="Auris features explained">
+  <div class="feature-grid-inner">
+    <div class="feature-intro scroll-in">
+      <p class="s-eye">What Auris can help simplify</p>
+      <h2 class="s-h2">The features matter when they remove real work from your team.</h2>
+      <p>Auris is not just a payroll switch. It can help connect the pieces that business owners usually have to manage across separate vendors, logins, and spreadsheets.</p>
+    </div>
+    <div class="feature-cards">
+      <article class="feature-card scroll-in">
+        <div class="feature-icon" aria-hidden="true">P</div>
+        <h3>Payroll</h3>
+        <p><strong>Pay people accurately and get help when questions come up.</strong> Auris gives owners a clearer payroll process with support from people who understand the account.</p>
+      </article>
+      <article class="feature-card scroll-in">
+        <div class="feature-icon" aria-hidden="true">TC</div>
+        <h3>WOTC tax credits</h3>
+        <p><strong>Does your payroll scan for hiring tax credits?</strong> Auris can help screen new hires for potential Work Opportunity Tax Credit eligibility so opportunities are not missed.</p>
+      </article>
+      <article class="feature-card scroll-in">
+        <div class="feature-icon" aria-hidden="true">401</div>
+        <h3>401k</h3>
+        <p><strong>Retirement options should not create more admin.</strong> Auris can help connect 401k options into the broader payroll and employee benefits picture.</p>
+      </article>
+      <article class="feature-card scroll-in">
+        <div class="feature-icon" aria-hidden="true">B</div>
+        <h3>Benefits</h3>
+        <p><strong>Keep benefits easier to manage.</strong> Auris can help coordinate benefits administration, payroll deductions, enrollment details, and employee access.</p>
+      </article>
+      <article class="feature-card scroll-in">
+        <div class="feature-icon" aria-hidden="true">Z</div>
+        <h3>ZayZoon</h3>
+        <p><strong>Employees may need access to earned wages before payday.</strong> ZayZoon can add earned wage access as an employee financial wellness benefit.</p>
+      </article>
+      <article class="feature-card scroll-in">
+        <div class="feature-icon" aria-hidden="true">HR</div>
+        <h3>HR and onboarding</h3>
+        <p><strong>Less paperwork and fewer disconnected steps.</strong> Auris can help with onboarding, time, HR tasks, and compliance support inside a more connected workflow.</p>
+      </article>
+    </div>
+    <div class="feature-note scroll-in">The point is not to overwhelm you with tools. The point is to see which pieces could save time, reduce missed opportunities, or make life easier for your employees.</div>
   </div>
 </section>
 
