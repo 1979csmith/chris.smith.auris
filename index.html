@@ -410,13 +410,13 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="hero-copy">
       <div class="eyebrow">Regional Auris payroll specialist</div>
       <h1 id="hero-h1">Payroll, benefits, and 401(k) should not feel this scattered.</h1>
-      <p class="hero-hook">I’m Chris Smith, an Auris sales representative. I help business owners see whether Auris can simplify payroll, HR, benefits, and 401(k) support in one clearer system.</p>
+      <p class="hero-hook">I’m Chris Smith, an Auris sales representative. In a 20 minute conversation, I help business owners see whether Auris can save them time, money, or both by simplifying payroll, HR, benefits, and 401(k) support in one clearer system.</p>
       <div class="hero-proof" aria-label="Key credibility points">
         <div class="proof-row">Regional Auris support team</div>
         <div class="proof-row">Under 60 sec average wait time</div>
         <div class="proof-row">Official Auris site: auris.io</div>
       </div>
-      <a href="#connect" class="hero-cta" data-track="hero_cta">See if Auris is a fit →</a>
+      <a href="#connect" class="hero-cta" data-track="hero_cta">Book a 20 minute conversation →</a>
       <div class="hero-mini-proof">“With Auris, I can always reach someone.” <span>Auris client</span></div>
       <a class="official-auris" href="https://www.auris.io/" target="_blank" rel="noopener">Official Auris site: <strong>auris.io</strong> ↗</a>
     </div>
@@ -491,12 +491,12 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
 
 <!-- ── CTA ── -->
 <section class="cta-band" id="connect" aria-label="See if Auris is a fit">
-  <h2>See if Auris is a fit<br><em>Talk to Chris directly.</em></h2>
-  <p>If someone referred you here, the fastest next step is simple. Call Chris directly or send a prefilled email with the details he needs to follow up prepared.</p>
+  <h2>Can I save you time, money, or both?<br><em>Start with a 20 minute conversation.</em></h2>
+  <p>I’m Chris Smith, an Auris sales representative. Call me directly or send a prefilled email and I’ll help you see whether Auris can simplify payroll, HR, benefits, and 401(k) support in one clearer system.</p>
   <div class="contact-panel">
     <div class="contact-actions" aria-label="Contact Chris">
       <a class="contact-action contact-call" href="tel:+18018858755" data-track="click_call"><strong>Call Chris</strong><span>801 885 8755</span></a>
-      <a class="contact-action contact-email" id="email-chris-link" data-track="click_email" href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A"><strong>Email Chris</strong><span>Prefilled prompt</span></a>
+      <a class="contact-action contact-email" id="email-chris-link" data-track="click_email" href="mailto:chrissmith@auris.io?subject=20%20minute%20Auris%20conversation&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A"><strong>Email Chris</strong><span>Prefilled prompt</span></a>
     </div>
     <p class="contact-helper">Email opens with prompts for company name, employee count, best contact times, and what you want help with.</p>
   </div>
@@ -667,7 +667,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="foot-links">
       <a href="https://auris.io" target="_blank" rel="noopener">auris.io ↗</a>
       <a href="tel:+18018858755" data-track="footer_call">Call</a>
-      <a data-track="footer_email" href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A">Email</a>
+      <a data-track="footer_email" href="mailto:chrissmith@auris.io?subject=20%20minute%20Auris%20conversation&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A">Email</a>
     </div>
   </div>
   <div style="max-width:1060px;margin:0 auto;padding:0 1.25rem;">
@@ -739,7 +739,7 @@ function refreshEmailLink() {
     `Lead tag: ${source.lead || ""}`,
     `Company tag: ${source.company || ""}`
   ].join("\n");
-  const subject = encodeURIComponent("See if Auris is a fit");
+  const subject = encodeURIComponent("20 minute Auris conversation");
   const body = encodeURIComponent(`Help Chris out:\n\nCompany name:\n\nHow many employees:\n\nBest times for Chris to contact:\n\nWhat would you like help with:\n${sourceLines}\n`);
   emailLink.href = `mailto:chrissmith@auris.io?subject=${subject}&body=${body}`;
 }
