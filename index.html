@@ -249,6 +249,8 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .why-section { background: linear-gradient(180deg,var(--warm2),#F2ECE3); }
 .partner-section { display: none; background: linear-gradient(180deg,var(--slate),var(--slate2)); color: white; }
 .partner-section:target { display: block; }
+.partner-mode .hero, .partner-mode .hero-benefits, .partner-mode .stats, .partner-mode .cta-band, .partner-mode footer { display: none; }
+.partner-mode .partner-section { display: block; min-height: calc(100vh - 60px); }
 .partner-section:target .scroll-in { opacity: 1; transform: none; }
 .partner-section .s-eye { color: var(--teal3); }
 .partner-section .s-h2 { color: white; }
@@ -733,6 +735,13 @@ trackEvent("page_view_custom", { path: window.location.pathname });
 const partnerPhoto = document.getElementById("partner-photo-img");
 const heroPhoto = document.querySelector(".hero-photo");
 if (partnerPhoto && heroPhoto) partnerPhoto.src = heroPhoto.src;
+
+
+function syncPartnerMode() {
+  document.body.classList.toggle("partner-mode", window.location.hash === "#partners");
+}
+syncPartnerMode();
+window.addEventListener("hashchange", syncPartnerMode);
 
 document.querySelectorAll("[data-track]").forEach(el => {
   el.addEventListener("click", () => trackEvent(el.dataset.track, { text: el.textContent.trim().slice(0, 120) }));
