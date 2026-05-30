@@ -286,6 +286,17 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .btn-outline:hover { border-color: rgba(255,255,255,0.45); color: white; }
 
 
+
+.contact-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; max-width: 640px; margin: 0 auto 1rem; }
+.contact-action { min-height: 58px; border-radius: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.15rem; text-decoration: none; border: 1px solid rgba(255,255,255,0.14); transition: transform .18s, background .18s, border-color .18s; }
+.contact-action strong { font-size: 16px; font-weight: 600; }
+.contact-action span { font-size: 12px; opacity: 0.72; }
+.contact-call { background: var(--teal2); color: white; }
+.contact-email { background: rgba(255,255,255,0.08); color: white; }
+.contact-action:hover { transform: translateY(-2px); border-color: rgba(200,237,233,0.35); }
+.contact-helper { max-width: 640px; margin: 0 auto 1rem; color: rgba(255,255,255,0.48); font-size: 13px; line-height: 1.55; }
+@media (max-width: 620px) { .contact-actions { grid-template-columns: 1fr; } }
+
 .fit-form { max-width: 640px; margin: 2rem auto 0; text-align: left; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; padding: 1.4rem; box-shadow: 0 18px 50px rgba(0,0,0,0.16); }
 .fit-form-grid { display: grid; gap: 1rem; }
 .fit-field label, .fit-legend { display: block; color: rgba(255,255,255,0.88); font-size: 14px; font-weight: 500; margin-bottom: 0.45rem; }
@@ -294,7 +305,7 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .fit-checks { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.6rem; }
 .fit-check { display: flex; align-items: center; gap: 0.5rem; min-height: 46px; padding: 0.7rem 0.8rem; border: 1px solid rgba(255,255,255,0.16); border-radius: 10px; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.82); font-size: 14px; cursor: pointer; }
 .fit-check input { width: 17px; height: 17px; accent-color: var(--teal2); }
-.fit-contact-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0.8rem; }
+.fit-contact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0.8rem; }
 .fit-submit { width: 100%; justify-content: center; border: none; margin-top: 0.25rem; }
 .fit-status { margin-top: 0.9rem; color: rgba(255,255,255,0.72); font-size: 13px; line-height: 1.5; text-align: center; }
 .fit-status a { color: var(--teal3); font-weight: 600; }
@@ -628,8 +639,13 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
 
 <!-- ── CTA ── -->
 <section class="cta-band" id="connect" aria-label="See if Auris is a fit">
-  <h2>See if Auris is a fit<br><em>Start with two quick questions.</em></h2>
-  <p>If someone referred you here, this is the easiest next step. Share a few details and I’ll help you understand whether Auris makes sense for your business.</p>
+  <h2>See if Auris is a fit<br><em>Call, email, or send the quick form.</em></h2>
+  <p>If someone referred you here, this is the easiest next step. Reach Chris directly or share a few details and I’ll help you understand whether Auris makes sense for your business.</p>
+  <div class="contact-actions" aria-label="Contact Chris">
+    <a class="contact-action contact-call" href="tel:+18018858755"><strong>Call Chris</strong><span>801 885 8755</span></a>
+    <a class="contact-action contact-email" href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A"><strong>Email Chris</strong><span>Prefilled with the right questions</span></a>
+  </div>
+  <p class="contact-helper">The form below helps Chris respond faster. Company name, employee count, and best contact times are the most helpful details.</p>
   <form id="lead-form" class="fit-form" novalidate>
     <div class="fit-form-grid">
       <div class="fit-field">
@@ -656,6 +672,10 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <div class="fit-field">
           <label for="lead_company">Company name</label>
           <input id="lead_company" name="Company name" autocomplete="organization" required>
+        </div>
+        <div class="fit-field">
+          <label for="best_times">Best times for Chris to contact</label>
+          <input id="best_times" name="Best times for Chris to contact" autocomplete="off" required>
         </div>
       </div>
       <button type="submit" class="btn-primary fit-submit">Send my info to Chris →</button>
@@ -827,7 +847,8 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="foot-brand">Your <strong>Auris Specialist</strong>, serving clients for the life of the account</div>
     <div class="foot-links">
       <a href="https://auris.io" target="_blank" rel="noopener">auris.io ↗</a>
-      <a href="#connect">Contact</a>
+      <a href="tel:+18018858755">Call</a>
+      <a href="mailto:chrissmith@auris.io?subject=See%20if%20Auris%20is%20a%20fit&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AHow%20many%20employees%3A%0A%0ABest%20times%20for%20Chris%20to%20contact%3A%0A%0AWhat%20would%20you%20like%20help%20with%3A%0A">Email</a>
     </div>
   </div>
   <div style="max-width:1060px;margin:0 auto;padding:0 1.25rem;">
@@ -882,6 +903,7 @@ leadForm?.addEventListener("submit", async event => {
     "Name": leadForm.lead_name.value.trim(),
     "Email": leadForm.lead_email.value.trim(),
     "Company name": leadForm.lead_company.value.trim(),
+    "Best times for Chris to contact": leadForm.best_times.value.trim(),
     "Page URL": window.location.href,
     "User agent": navigator.userAgent
   };
