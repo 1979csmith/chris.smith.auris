@@ -87,6 +87,18 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--slate) 0%, transparent 28%, transparent 72%, rgba(21,35,52,0.25) 100%); }
 
+
+/* ── HERO BENEFITS ── */
+.hero-benefits { background: var(--slate); border-top: 1px solid rgba(255,255,255,0.08); padding: 0 1.25rem 1.5rem; }
+.hero-benefits-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: repeat(3,1fr); gap: 0.85rem; }
+.hero-benefit { display: block; text-decoration: none; color: white; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 15px; padding: 1rem 1.05rem; transition: transform .18s, border-color .18s, background .18s; position: relative; overflow: hidden; }
+.hero-benefit::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 4px; background: linear-gradient(90deg,var(--teal2),var(--amber2)); opacity: 0.9; }
+.hero-benefit:hover { transform: translateY(-2px); border-color: rgba(200,237,233,0.34); background: rgba(255,255,255,0.1); }
+.hero-benefit-kicker { display: block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal3); font-weight: 600; margin-bottom: 0.45rem; }
+.hero-benefit-title { display: block; font-family: var(--font-d); font-size: 1.25rem; line-height: 1.12; font-weight: 400; margin-bottom: 0.45rem; }
+.hero-benefit-copy { display: block; color: rgba(255,255,255,0.62); font-size: 13px; line-height: 1.5; font-weight: 300; }
+@media (max-width: 820px) { .hero-benefits-inner { grid-template-columns: 1fr; } }
+
 /* ── STAT STRIP ── */
 .stats { background: var(--slate2); border-bottom: 1px solid rgba(255,255,255,0.06); }
 .stats-inner { max-width: 1060px; margin: 0 auto; padding: 0 1.25rem; display: grid; grid-template-columns: repeat(3,1fr); }
@@ -388,6 +400,28 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   <div class="hero-bar"></div>
 </section>
 
+
+<!-- ── HERO BENEFITS ── -->
+<section class="hero-benefits" aria-label="Auris benefit questions">
+  <div class="hero-benefits-inner">
+    <a class="hero-benefit" href="#zayzoon-feature">
+      <span class="hero-benefit-kicker">ZayZoon</span>
+      <span class="hero-benefit-title">No more payroll advances</span>
+      <span class="hero-benefit-copy">Offer earned wage access without making it another payroll headache.</span>
+    </a>
+    <a class="hero-benefit" href="#wotc-feature">
+      <span class="hero-benefit-kicker">WOTC</span>
+      <span class="hero-benefit-title">Does your current system screen for tax credits?</span>
+      <span class="hero-benefit-copy">Auris can help screen new hires for potential Work Opportunity Tax Credit eligibility.</span>
+    </a>
+    <a class="hero-benefit" href="#employee-access-feature">
+      <span class="hero-benefit-kicker">Employee access</span>
+      <span class="hero-benefit-title">One place for payroll, benefits, and 401k</span>
+      <span class="hero-benefit-copy">Reduce the need for employees and managers to bounce between multiple sites.</span>
+    </a>
+  </div>
+</section>
+
 <!-- ── TRUST STRIP ── -->
 <div class="stats" aria-label="Auris credibility points">
   <div class="stats-inner">
@@ -504,7 +538,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <h3>Payroll</h3>
         <p><strong>Pay people accurately and get help when questions come up.</strong> Auris gives owners a clearer payroll process with support from people who understand the account.</p>
       </article>
-      <article class="feature-card scroll-in">
+      <article class="feature-card scroll-in" id="wotc-feature">
         <div class="feature-icon" aria-hidden="true">TC</div>
         <h3>WOTC tax credits</h3>
         <p><strong>Does your payroll scan for hiring tax credits?</strong> Auris can help screen new hires for potential Work Opportunity Tax Credit eligibility so opportunities are not missed.</p>
@@ -519,12 +553,12 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         <h3>Benefits</h3>
         <p><strong>Keep benefits easier to manage.</strong> Auris can help coordinate benefits administration, payroll deductions, enrollment details, and employee access.</p>
       </article>
-      <article class="feature-card scroll-in">
+      <article class="feature-card scroll-in" id="zayzoon-feature">
         <div class="feature-icon" aria-hidden="true">Z</div>
         <h3>ZayZoon</h3>
         <p><strong>Employees may need access to earned wages before payday.</strong> ZayZoon can add earned wage access as an employee financial wellness benefit.</p>
       </article>
-      <article class="feature-card scroll-in">
+      <article class="feature-card scroll-in" id="employee-access-feature">
         <div class="feature-icon" aria-hidden="true">1</div>
         <h3>Employee access</h3>
         <p><strong>Can your employees access payroll, benefits, and 401k in one place?</strong> Auris helps reduce the need for employees and managers to bounce between multiple sites.</p>
