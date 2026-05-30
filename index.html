@@ -180,6 +180,7 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .k401-logos { display: flex; align-items: center; gap: 0.45rem; flex-shrink: 0; }
 .k401-logo-card { height: 36px; min-width: 82px; padding: 7px 9px; border: 1px solid rgba(21,35,52,0.08); border-radius: 9px; background: white; display: inline-flex; align-items: center; justify-content: center; }
 .k401-logo-card img { max-width: 92px; max-height: 22px; object-fit: contain; }
+.en-wordmark { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: -0.2px; white-space: nowrap; }
 .k401-kicker { display: block; font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--teal); margin-bottom: 2px; }
 .k401-title { display: block; font-size: 14px; color: #4A6070; font-weight: 400; line-height: 1.35; }
 .k401-chev { width: 32px; height: 32px; border-radius: 50%; background: #E8F5F4; color: var(--teal); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .25s var(--ease), background .2s; }
@@ -588,6 +589,34 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
           </div>
         </div>
         <div class="eco-row"><div class="eco-dot"></div><div class="eco-row-text"><strong style="color:rgba(255,255,255,0.85);font-weight:500;">Benefits</strong> — medical, dental, vision through your existing broker/carrier or Employee Navigator-supported workflows</div></div>
+        <div class="k401-insight" id="benefits-insight">
+          <div class="k401-prehead">Keep your broker — or make benefits easier to manage.</div>
+          <button class="k401-toggle" type="button" aria-expanded="false" aria-controls="benefits-panel">
+            <span class="k401-brand">
+              <span class="k401-logos" aria-label="Benefits partner logo">
+                <span class="k401-logo-card"><span class="en-wordmark">Employee Navigator</span></span>
+              </span>
+              <span>
+                <span class="k401-kicker">Quick insight</span>
+                <span class="k401-title">Benefits administration options</span>
+              </span>
+            </span>
+            <span class="k401-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="k401-panel" id="benefits-panel">
+            <div class="k401-panel-inner">
+              <div class="k401-info">
+                <h4>How Auris handles benefits partners</h4>
+                <p>If you already have a broker, carrier, or benefits setup you like, Auris can usually work with your current plan instead of forcing a change. If you need a cleaner administration path, <a href="https://www.employeenavigator.com/" target="_blank" rel="noopener">Employee Navigator</a> helps connect benefits enrollment, HR, compliance, and integrations so payroll and benefits stay easier to manage.</p>
+              </div>
+              <div class="k401-chips" aria-label="Benefits highlights">
+                <span class="k401-chip">Keep your broker</span>
+                <span class="k401-chip">Simpler enrollment</span>
+                <span class="k401-chip amber">Connected administration</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="eco-divider"></div>
         <div class="eco-row hi"><div class="eco-dot"></div><div class="eco-row-text"><strong>ZayZoon</strong> — earned wage access, an optional financial wellness add-on employees actually use</div></div>
         <div class="zay-insight" id="zayzoon-insight">
