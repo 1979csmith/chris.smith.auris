@@ -173,6 +173,27 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .zay-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; padding-top: 0.1rem; }
 .zay-chip { font-size: 12px; color: var(--teal); background: #E8F5F4; border: 1px solid rgba(27,122,110,0.12); border-radius: 100px; padding: 5px 10px; }
 .zay-chip.amber { color: var(--amber); background: var(--amber3); border-color: rgba(217,118,15,0.13); }
+.k401-insight { margin: 0.15rem 0 0.25rem; background: rgba(255,255,255,0.96); border: 1px solid rgba(200,237,233,0.75); border-radius: 16px; overflow: hidden; box-shadow: 0 16px 40px rgba(21,35,52,0.16); }
+.k401-prehead { padding: 1.05rem 1.1rem 0; font-family: var(--font-d); font-size: 1.15rem; line-height: 1.2; color: var(--ink); }
+.k401-toggle { width: 100%; min-height: 58px; border: 0; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.95rem 1.1rem 1.1rem; text-align: left; font-family: var(--font-b); }
+.k401-brand { display: flex; align-items: center; gap: 0.75rem; min-width: 0; }
+.k401-logos { display: flex; align-items: center; gap: 0.45rem; flex-shrink: 0; }
+.k401-logo-card { height: 36px; min-width: 82px; padding: 7px 9px; border: 1px solid rgba(21,35,52,0.08); border-radius: 9px; background: white; display: inline-flex; align-items: center; justify-content: center; }
+.k401-logo-card img { max-width: 92px; max-height: 22px; object-fit: contain; }
+.k401-kicker { display: block; font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--teal); margin-bottom: 2px; }
+.k401-title { display: block; font-size: 14px; color: #4A6070; font-weight: 400; line-height: 1.35; }
+.k401-chev { width: 32px; height: 32px; border-radius: 50%; background: #E8F5F4; color: var(--teal); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .25s var(--ease), background .2s; }
+.k401-insight.open .k401-chev { transform: rotate(180deg); background: var(--teal3); }
+.k401-panel { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
+.k401-insight.open .k401-panel { max-height: 360px; }
+.k401-panel-inner { margin: 0 1.1rem 1.1rem; padding-top: 1rem; border-top: 1px solid rgba(21,35,52,0.09); display: grid; gap: 1rem; }
+.k401-info { padding: 0.95rem; background: #F7FBFA; border: 1px solid rgba(27,122,110,0.09); border-radius: 12px; }
+.k401-info h4 { font-size: 13px; color: var(--teal); font-weight: 700; margin-bottom: 0.45rem; }
+.k401-info p { font-size: 13.5px; line-height: 1.65; color: #4A6070; font-weight: 300; margin: 0; }
+.k401-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; padding-top: 0.1rem; }
+.k401-chip { font-size: 12px; color: var(--teal); background: #E8F5F4; border: 1px solid rgba(27,122,110,0.12); border-radius: 100px; padding: 5px 10px; }
+.k401-chip.amber { color: var(--amber); background: var(--amber3); border-color: rgba(217,118,15,0.13); }
+@media (max-width: 520px) { .k401-brand { align-items: flex-start; flex-direction: column; } .k401-logos { flex-wrap: wrap; } }
 
 /* ── TESTIMONIALS ── */
 .testi-section { padding: 5rem 1.25rem; }
@@ -535,6 +556,35 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
       <div class="eco-rows">
         <div class="eco-row"><div class="eco-dot"></div><div class="eco-row-text"><strong style="color:rgba(255,255,255,0.85);font-weight:500;">Auris platform</strong> — payroll, HR, time tracking, compliance, reporting</div></div>
         <div class="eco-row"><div class="eco-dot"></div><div class="eco-row-text"><strong style="color:rgba(255,255,255,0.85);font-weight:500;">401(k)</strong> — keep your current advisor/provider, or explore partner options like Human Interest / 401GO where appropriate</div></div>
+        <div class="k401-insight" id="k401-insight">
+          <div class="k401-prehead">Keep your 401(k) — or see if Auris partners can lower the cost.</div>
+          <button class="k401-toggle" type="button" aria-expanded="false" aria-controls="k401-panel">
+            <span class="k401-brand">
+              <span class="k401-logos" aria-label="401(k) partner logos">
+                <span class="k401-logo-card"><img src="https://images.ctfassets.net/tj9jxg7kaxby/5pfZ2fwcihpJt8VrjB8vAj/99f9d1541caed73f63c76d3df4af8a24/logo_hi.jpg" alt="Human Interest logo" loading="lazy"></span>
+                <span class="k401-logo-card"><img src="https://401go.com/wp-content/uploads/2024/08/401GO-Logo-Black.png" alt="401GO logo" loading="lazy"></span>
+              </span>
+              <span>
+                <span class="k401-kicker">Quick insight</span>
+                <span class="k401-title">401(k) partner options</span>
+              </span>
+            </span>
+            <span class="k401-chev" aria-hidden="true">⌄</span>
+          </button>
+          <div class="k401-panel" id="k401-panel">
+            <div class="k401-panel-inner">
+              <div class="k401-info">
+                <h4>How Auris handles 401(k) options</h4>
+                <p>If you already have a 401(k), advisor, or recordkeeper you like, Auris can usually work with your current plan instead of forcing a switch. If your plan is expensive, clunky, or missing payroll integration, Auris can introduce partner options like Human Interest or 401GO that may offer no-cost or reduced-cost paths where available.</p>
+              </div>
+              <div class="k401-chips" aria-label="401(k) highlights">
+                <span class="k401-chip">Keep your current plan</span>
+                <span class="k401-chip">Compare partner options</span>
+                <span class="k401-chip amber">Potential lower cost</span>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="eco-row"><div class="eco-dot"></div><div class="eco-row-text"><strong style="color:rgba(255,255,255,0.85);font-weight:500;">Benefits</strong> — medical, dental, vision through your existing broker/carrier or Employee Navigator-supported workflows</div></div>
         <div class="eco-divider"></div>
         <div class="eco-row hi"><div class="eco-dot"></div><div class="eco-row-text"><strong>ZayZoon</strong> — earned wage access, an optional financial wellness add-on employees actually use</div></div>
@@ -676,8 +726,8 @@ document.querySelectorAll(".feat").forEach(card => {
 });
 
 /* ZayZoon quick insight */
-document.querySelectorAll(".zay-insight").forEach(card => {
-  const btn = card.querySelector(".zay-toggle");
+document.querySelectorAll(".zay-insight, .k401-insight").forEach(card => {
+  const btn = card.querySelector("button");
   btn.addEventListener("click", () => {
     const open = card.classList.toggle("open");
     btn.setAttribute("aria-expanded", open ? "true" : "false");
