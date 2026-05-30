@@ -911,7 +911,7 @@ function backupLead(data) {
 }
 
 function buildMailto(data) {
-  const subject = encodeURIComponent("Auris fit lead from landing page");
+  const subject = encodeURIComponent("Meeting request from Auris landing page");
   const body = encodeURIComponent(Object.entries(data).map(([k, v]) => `${k}: ${v}`).join("\n"));
   return `mailto:${leadRecipients}?subject=${subject}&body=${body}`;
 }
@@ -942,8 +942,9 @@ leadForm?.addEventListener("submit", async event => {
   try {
     const payload = new FormData();
     Object.entries(data).forEach(([key, value]) => payload.append(key, value));
-    payload.append("_subject", "New Auris fit lead");
+    payload.append("_subject", "Meeting request from Auris landing page");
     payload.append("_cc", "chris@aurissolutions.com");
+    payload.append("Email routing", leadRecipients);
     payload.append("_template", "table");
     payload.append("_captcha", "false");
     const response = await fetch(leadEndpoint, {
