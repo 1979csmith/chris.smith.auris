@@ -186,7 +186,7 @@ header { background: var(--slate); position: sticky; top: 0; z-index: 100; borde
 .k401-chev { width: 32px; height: 32px; border-radius: 50%; background: #E8F5F4; color: var(--teal); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform .25s var(--ease), background .2s; }
 .k401-insight.open .k401-chev { transform: rotate(180deg); background: var(--teal3); }
 .k401-panel { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
-.k401-insight.open .k401-panel { max-height: 360px; }
+.k401-insight.open .k401-panel { max-height: 520px; }
 .k401-panel-inner { margin: 0 1.1rem 1.1rem; padding-top: 1rem; border-top: 1px solid rgba(21,35,52,0.09); display: grid; gap: 1rem; }
 .k401-info { padding: 0.95rem; background: #F7FBFA; border: 1px solid rgba(27,122,110,0.09); border-radius: 12px; }
 .k401-info h4 { font-size: 13px; color: var(--teal); font-weight: 700; margin-bottom: 0.45rem; }
@@ -590,7 +590,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
         </div>
         <div class="eco-row"><div class="eco-dot"></div><div class="eco-row-text"><strong style="color:rgba(255,255,255,0.85);font-weight:500;">Benefits</strong> — medical, dental, vision through your existing broker/carrier or Employee Navigator-supported workflows</div></div>
         <div class="k401-insight" id="benefits-insight">
-          <div class="k401-prehead">Keep your broker — or make benefits easier to manage.</div>
+          <div class="k401-prehead">Keep your broker — and make benefits easier to manage.</div>
           <button class="k401-toggle" type="button" aria-expanded="false" aria-controls="benefits-panel">
             <span class="k401-brand">
               <span class="k401-logos" aria-label="Benefits partner logo">
@@ -607,12 +607,13 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
             <div class="k401-panel-inner">
               <div class="k401-info">
                 <h4>How Auris handles benefits partners</h4>
-                <p>If you already have a broker, carrier, or benefits setup you like, Auris can usually work with your current plan instead of forcing a change. If you need a cleaner administration path, <a href="https://www.employeenavigator.com/" target="_blank" rel="noopener">Employee Navigator</a> helps connect benefits enrollment, HR, compliance, and integrations so payroll and benefits stay easier to manage.</p>
+                <p>Auris helps employers manage health insurance, dental, vision, FSA/HSA, 401(k), workers’ comp integrations, payroll deductions, and ACA compliance reporting from a connected benefits workflow. Employees can enroll digitally and view benefits in one place, while integrations like <a href="https://www.employeenavigator.com/" target="_blank" rel="noopener">Employee Navigator</a> sync benefit elections into payroll to reduce manual HR entry and errors.</p>
               </div>
               <div class="k401-chips" aria-label="Benefits highlights">
-                <span class="k401-chip">Keep your broker</span>
-                <span class="k401-chip">Simpler enrollment</span>
-                <span class="k401-chip amber">Connected administration</span>
+                <span class="k401-chip">Digital enrollment</span>
+                <span class="k401-chip">Payroll deductions</span>
+                <span class="k401-chip">ACA support</span>
+                <span class="k401-chip amber">Employee Navigator sync</span>
               </div>
             </div>
           </div>
