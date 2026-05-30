@@ -389,6 +389,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
     <div class="brand">Your <strong>Auris Specialist</strong></div>
     <div class="nav-links">
       <a href="#value">Why Auris</a>
+      <a href="#partners">Partners</a>
       <a href="#connect">Contact</a>
       <a href="#connect" class="nav-cta" data-track="nav_get_in_touch">Get in touch</a>
     </div>
@@ -398,6 +399,7 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   </div>
   <nav class="m-nav" id="mnav" aria-label="Mobile navigation">
     <a href="#value">Why Auris</a>
+    <a href="#partners">Partners</a>
     <a href="#connect">Contact</a>
     <a href="#connect" class="m-nav-cta" data-track="mobile_get_in_touch">Get in touch →</a>
   </nav>
@@ -485,6 +487,24 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
       <div class="why-card-kicker">Core outcome</div>
       <h3>Less scattered admin. More clarity.</h3>
       <p>Use the cards above for a fast look at WOTC, ZayZoon, and employee access. Then call or email Chris if it sounds worth a quick conversation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ── -->
+<section class="consult-section why-section" id="partners" aria-label="Partner referral opportunity">
+  <div class="consult-inner two-col">
+    <div class="scroll-in">
+      <p class="s-eye">Partner referrals</p>
+      <h2 class="s-h2">Refer payroll opportunities without taking on the service burden.</h2>
+      <p class="consult-lead">If you serve business owners, Auris can be a strong referral path when payroll, HR, benefits, or 401k questions come up.</p>
+      <p class="consult-copy">Chris keeps and manages the account after the referral, so your client has one Auris sales representative for the life of the account. The goal is simple. Protect your relationship, give the client responsive service, and create lifetime residual opportunity for qualified partner referrals.</p>
+    </div>
+    <div class="why-card scroll-in" aria-label="Why partners refer to Auris">
+      <div class="why-card-kicker">Why partners refer</div>
+      <h3>Service that reflects well on you.</h3>
+      <p>Auris leads with customer service, responsiveness, and clear ownership. Your referral is not handed into a queue. Chris stays attached, answers questions, and helps keep the account moving.</p>
+      <a class="inline-cta" id="partner-email-link" data-track="partner_email_cta" href="mailto:chrissmith@auris.io?subject=Partner%20referral%20conversation&body=Help%20Chris%20out%3A%0A%0APartner%20name%3A%0A%0AReferral%20type%3A%0A%0ABest%20times%20to%20talk%3A%0A%0AWhat%20should%20Chris%20know%3A%0A">Talk partner referrals</a>
     </div>
   </div>
 </section>
@@ -727,7 +747,8 @@ document.querySelectorAll("[data-track]").forEach(el => {
 function refreshEmailLink() {
   const emailLink = document.getElementById("email-chris-link");
   const heroEmailLink = document.getElementById("hero-email-link");
-  if (!emailLink && !heroEmailLink) return;
+  const partnerEmailLink = document.getElementById("partner-email-link");
+  if (!emailLink && !heroEmailLink && !partnerEmailLink) return;
   const source = JSON.parse(sessionStorage.getItem("aurisVisitSource") || "{}");
   const sourceLines = [
     "",
@@ -745,6 +766,11 @@ function refreshEmailLink() {
   const mailtoHref = `mailto:chrissmith@auris.io?subject=${subject}&body=${body}`;
   if (emailLink) emailLink.href = mailtoHref;
   if (heroEmailLink) heroEmailLink.href = mailtoHref;
+  if (partnerEmailLink) {
+    const partnerSubject = encodeURIComponent("Partner referral conversation");
+    const partnerBody = encodeURIComponent(`Help Chris out:\n\nPartner name:\n\nReferral type:\n\nBest times to talk:\n\nWhat should Chris know:\n${sourceLines}\n`);
+    partnerEmailLink.href = `mailto:chrissmith@auris.io?subject=${partnerSubject}&body=${partnerBody}`;
+  }
 }
 refreshEmailLink();
 
