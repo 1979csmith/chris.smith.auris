@@ -15,12 +15,6 @@
   <url><loc>https://chris.aurissolutions.co/payroll-audit-help-intermountain-west/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://chris.aurissolutions.co/workers-comp-audit-payroll-issues/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://chris.aurissolutions.co/payroll-filing-errors-corrections/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://chris.aurissolutions.co/certified-payroll-requirements-utah/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://chris.aurissolutions.co/certified-payroll-requirements-idaho/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://chris.aurissolutions.co/certified-payroll-requirements-montana/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://chris.aurissolutions.co/certified-payroll-requirements-wyoming/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://chris.aurissolutions.co/certified-payroll-requirements-colorado/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://chris.aurissolutions.co/certified-payroll-requirements-nevada/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://chris.aurissolutions.co/davis-bacon-compliance-payroll/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://chris.aurissolutions.co/prevailing-wage-payroll-requirements/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://chris.aurissolutions.co/subcontractor-payroll-reporting-issues/</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
@@ -82,14 +76,6 @@
   <url><loc>https://chris.aurissolutions.co/utah-subcontractor-payroll/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
   <url><loc>https://chris.aurissolutions.co/wyoming-subcontractor-payroll/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
   <url><loc>https://chris.aurissolutions.co/wh-347-certified-payroll-utah/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-electrical-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-plumbing-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-hvac-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-roofing-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-concrete-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-excavation-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-drywall-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
-  <url><loc>https://chris.aurissolutions.co/utah-certified-payroll-fire-protection-contractor/</loc><changefreq>weekly</changefreq><priority>0.82</priority></url>
   <url><loc>https://chris.aurissolutions.co/certified-payroll/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
   <url><loc>https://chris.aurissolutions.co/certified-payroll/california/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
   <url><loc>https://chris.aurissolutions.co/certified-payroll/new-york/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
@@ -141,4 +127,12 @@
   <url><loc>https://chris.aurissolutions.co/certified-payroll/west-virginia/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
   <url><loc>https://chris.aurissolutions.co/certified-payroll/vermont/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
   <url><loc>https://chris.aurissolutions.co/certified-payroll/new-hampshire/</loc><changefreq>weekly</changefreq><priority>0.86</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/electrical-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/plumbing-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/hvac-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/roofing-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/concrete-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/excavation-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/drywall-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
+  <url><loc>https://chris.aurissolutions.co/certified-payroll/utah/fire-protection-contractors/</loc><changefreq>weekly</changefreq><priority>0.84</priority></url>
 </urlset>
