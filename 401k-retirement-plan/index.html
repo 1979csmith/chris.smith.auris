@@ -328,6 +328,57 @@ footer a{color:rgba(255,255,255,.4)}
   .states-grid{grid-template-columns:1fr 1fr}
 }
 </style>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://chris.aurissolutions.co/#chris-smith",
+      "name": "Chris Smith",
+      "email": "chrissmith@auris.io",
+      "telephone": "+1-801-885-8755",
+      "url": "https://chris.aurissolutions.co/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://chris.aurissolutions.co/401k-retirement-plan/#webpage",
+      "url": "https://chris.aurissolutions.co/401k-retirement-plan/",
+      "name": "Small Business 401(k) Requirements by State",
+      "description": "Check state retirement plan requirements, compare state auto-IRA vs private 401(k), and ask Chris whether to work with your current provider or an Auris partner.",
+      "about": [
+        "Small business 401(k) plans",
+        "State retirement mandates",
+        "Payroll and 401(k) provider coordination"
+      ],
+      "author": {
+        "@id": "https://chris.aurissolutions.co/#chris-smith"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://chris.aurissolutions.co/401k-retirement-plan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://chris.aurissolutions.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "401(k) Requirements",
+          "item": "https://chris.aurissolutions.co/401k-retirement-plan/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!-- /Structured data -->
 </head>
 <body>
 
