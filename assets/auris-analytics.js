@@ -20,12 +20,15 @@
       ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
       document.head.appendChild(ga);
     }
-    window.gtag('js', new Date());
-    window.gtag('config', id, {
-      page_title: source.title,
-      page_location: source.landing_page,
-      page_path: source.path
-    });
+    if (!window.__AURIS_GA_CONFIGURED__) {
+      window.gtag('js', new Date());
+      window.gtag('config', id, {
+        page_title: source.title,
+        page_location: source.landing_page,
+        page_path: source.path
+      });
+      window.__AURIS_GA_CONFIGURED__ = true;
+    }
   }
 
   window.aurisTrack = function(name, detail) {
