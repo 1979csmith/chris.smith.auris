@@ -89,5 +89,11 @@ function trackEvent(name, detail={}) { console.info('Auris regional tracking eve
 trackEvent('regional_page_view', { region: 'Montana' });
 document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => trackEvent(el.dataset.track, { text: el.textContent.trim(), region: 'Montana' })));
 </script>
-<script src="/assets/auris-analytics.js" defer></script></body>
+<script src="/assets/auris-analytics.js" defer></script>
+<div class="lead-capture-bar" role="region" aria-label="Contact Chris Smith at Auris" style="position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;padding:10px 12px;background:rgba(21,35,52,.96);color:white;border:1px solid rgba(255,255,255,.16);border-radius:16px;box-shadow:0 18px 48px rgba(21,35,52,.25);backdrop-filter:blur(10px);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;line-height:1.3;">
+  <span style="font-weight:800;">Need payroll help?</span>
+  <a href="tel:+18018858755" data-track="sticky_call_chris" style="display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:#239B8B;color:white;text-decoration:none;font-weight:800;">Call Chris</a>
+  <a href="mailto:chrissmith@auris.io?subject=Payroll%20fit%20check%20with%20Chris&body=Help%20Chris%20out%3A%0A%0ACompany%20name%3A%0A%0AState%20or%20city%3A%0A%0AHow%20many%20employees%3A%0A%0ACurrent%20payroll%20setup%3A%0A%0AWhat%20payroll%20issue%20brought%20you%20here%3A%0A%0ABest%20times%20to%20talk%3A%0A" data-track="sticky_email_chris" style="display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 14px;border-radius:999px;background:white;color:#1B7A6E;text-decoration:none;font-weight:800;">Email Chris</a>
+</div>
+</body>
 </html>
