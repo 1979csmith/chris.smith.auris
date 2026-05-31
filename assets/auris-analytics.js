@@ -2,7 +2,7 @@
   if (window.__AURIS_ANALYTICS_READY__) return;
   window.__AURIS_ANALYTICS_READY__ = true;
 
-  var GA_ID = window.AURIS_ANALYTICS_ID || "";
+  var GA_ID = window.AURIS_ANALYTICS_ID || "G-PBFE27KKV1";
   var source = {
     landing_page: window.location.href,
     path: window.location.pathname,
