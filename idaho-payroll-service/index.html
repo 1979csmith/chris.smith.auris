@@ -81,5 +81,5 @@ function trackEvent(name, detail={}) { console.info('Auris regional tracking eve
 trackEvent('regional_page_view', { region: 'Idaho' });
 document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => trackEvent(el.dataset.track, { text: el.textContent.trim(), region: 'Idaho' })));
 </script>
-</body>
+<script src="/assets/auris-analytics.js" defer></script></body>
 </html>

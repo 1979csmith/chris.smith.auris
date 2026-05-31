@@ -50,5 +50,5 @@ function trackEvent(name, detail={}) { console.info('Auris pain page tracking ev
 trackEvent('pain_page_view', { page: 'certified-payroll-construction' });
 document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => trackEvent(el.dataset.track, { text: el.textContent.trim(), page: 'certified-payroll-construction' })));
 </script>
-</body>
+<script src="/assets/auris-analytics.js" defer></script></body>
 </html>
