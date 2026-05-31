@@ -399,6 +399,52 @@ footer { background: var(--slate2); padding: 2.25rem 1.25rem; }
   .btn-primary, .btn-outline { justify-content: center; }
   .foot-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* Mobile first fixes for QR traffic */
+@media (max-width: 640px) {
+  html { scroll-padding-top: 60px; }
+  body { width: 100%; }
+  .nav-wrap { height: 56px; padding: 0 0.9rem; }
+  .brand { font-size: 0.98rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .hero-photo-col { height: 260px; }
+  .hero-copy { padding: 2rem 0 2.5rem; }
+  .hero h1 { font-size: clamp(2.15rem, 13vw, 3rem); }
+  .hero-hook, .hero-proof, .hero-mini-proof { max-width: none; }
+  .hero-cta, .btn-primary, .btn-outline, .contact-action { width: 100%; justify-content: center; text-align: center; }
+  .hero-benefits { padding: 0 0.9rem 1rem; }
+  .hero-benefit { padding: 0.95rem; }
+  .hero-benefit-title { font-size: 1.16rem; }
+  .about-section, .features-section, .eco-section, .consult-section, .feature-grid-section, .testi-section, .cta-band { padding-left: 0.9rem; padding-right: 0.9rem; }
+  .story-card, .about-card, .problem-card, .why-card, .eco-panel, .feature-card, .testi { padding: 1rem; border-radius: 14px; }
+  .feat-head { padding: 1rem; gap: 0.75rem; align-items: flex-start; }
+  .feat-icon { width: 38px; height: 38px; }
+  .feat-body-inner { margin: 0 1rem; padding: 0 0 1rem; }
+  .feat.open .feat-body { max-height: 1200px; }
+  .eco-inner, .two-col { gap: 1.4rem; }
+  .eco-panel { overflow: visible; }
+  .zay-prehead, .k401-prehead { padding: 0.9rem 0.9rem 0; font-size: 1.05rem; }
+  .zay-toggle, .k401-toggle { align-items: flex-start; gap: 0.75rem; padding: 0.85rem 0.9rem 1rem; }
+  .zay-brand, .k401-brand { align-items: flex-start; flex-direction: column; gap: 0.55rem; }
+  .zay-logo { width: 104px; max-width: 52vw; }
+  .k401-logos { flex-wrap: wrap; gap: 0.35rem; }
+  .k401-logo-card { min-width: 74px; height: 34px; }
+  .zay-panel-inner, .k401-panel-inner { margin: 0 0.9rem 0.9rem; }
+  .zay-insight.open .zay-panel, .k401-insight.open .k401-panel { max-height: 1400px; }
+  .partner-mode .partner-section { min-height: calc(100dvh - 56px); }
+  .partner-photo-wrap { max-height: 210px; }
+  .partner-photo-img { height: 210px; }
+  .feature-cards, .testi-grid, .compact-proof { grid-template-columns: 1fr; }
+  .foot-links { flex-direction: column; gap: 0.75rem; }
+  .foot-links a, .contact-helper, .consult-copy, .about-p, .feature-card p, .zay-info p, .k401-info p { overflow-wrap: anywhere; }
+  .wotc-modal, .zayzoon-modal, .access-modal { align-items: stretch; justify-content: stretch; padding: 0; }
+  .wotc-dialog, .zayzoon-dialog, .access-dialog { width: 100%; max-height: 100dvh; min-height: 100dvh; border-radius: 0; }
+  .wotc-content, .zayzoon-content, .access-content { padding: 0 0.9rem 1.1rem; }
+  .wotc-close, .zayzoon-close, .access-close { top: 0.65rem; margin-top: 0.65rem; margin-right: 0.65rem; }
+  .wotc-head, .zayzoon-head, .access-head { padding-left: 0; padding-right: 0; }
+  .wotc-head h2, .zayzoon-head h2, .access-head h2 { font-size: clamp(1.9rem, 11vw, 2.45rem); }
+  .wotc-simple, .zayzoon-simple, .access-simple { display: block; border-radius: 14px; }
+  .wotc-money, .zayzoon-money, .access-money { font-size: 1.28rem; }
+}
 </style>
 </head>
 <body>
